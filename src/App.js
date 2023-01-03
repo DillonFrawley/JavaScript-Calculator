@@ -7,19 +7,15 @@ function App() {
   const [expression, setExpression] = React.useState("");
   const [answer, setAnswer] = React.useState(0);
 
-  const calculate = () => {
-    setAnswer(eval(expression));
-  }
+
 
   const display = (symbol) => {
     setExpression((prev) => prev + symbol);
-    if (expression[expression.length - 1] == "=" && /\d/.test(symbol)) {
-      setExpression(symbol);
-    }
-    else {
-      setExpression(answer + symbol);
-    }
   };
+
+  const calculate = () => {
+    setAnswer(eval(expression));
+  }
 
   const allClear = () => {
     setExpression("");
